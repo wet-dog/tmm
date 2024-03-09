@@ -67,12 +67,14 @@ def is_forward_angle(n, theta):
     if abs(ncostheta.imag) > 100 * EPSILON:
         # Either evanescent decay or lossy medium. Either way, the one that
         # decays is the forward-moving wave
+        print("top")
         answer = ncostheta.imag > 0
     else:
         # Forward is the one with positive Poynting vector
         # Poynting vector is Re[n cos(theta)] for s-polarization or
         # Re[n cos(theta*)] for p-polarization, but it turns out they're consistent
         # so I'll just assume s then check both below
+        print("bottom")
         answer = ncostheta.real > 0
     # convert from numpy boolean to the normal Python boolean
     answer = bool(answer)
