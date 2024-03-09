@@ -82,6 +82,7 @@ def is_forward_angle(n, theta):
         " index maybe?\n"
         "n: " + str(n) + "   angle: " + str(theta)
     )
+    print(answer)
     if answer is True:
         assert ncostheta.imag > -100 * EPSILON, error_string
         assert ncostheta.real > -100 * EPSILON, error_string
