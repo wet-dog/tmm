@@ -117,12 +117,16 @@ def list_snell(n_list, th_0):
     print("n0_")
     print(n0_)
     angles = arcsin(n0_)
+    print("angles before not is_forward_angle")
+    print(angles)
     # The first and last entry need to be the forward angle (the intermediate
     # layers don't matter, see https://arxiv.org/abs/1603.02720 Section 5)
     if not is_forward_angle(n_list[0], angles[0]):
         angles[0] = pi - angles[0]
     if not is_forward_angle(n_list[-1], angles[-1]):
         angles[-1] = pi - angles[-1]
+    print("angles after not is_forward_angle")
+    print(angles)
     return angles
 
 
