@@ -294,6 +294,9 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
     # complex!
     th_list = list_snell(n_list, th_0)
 
+    print("th_list")
+    print(th_list)
+
     # kz is the z-component of (complex) angular wavevector for forward-moving
     # wave. Positive imaginary part means decaying.
     kz_list = 2 * np.pi * n_list * cos(th_list) / lam_vac
@@ -304,7 +307,9 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
     delta = kz_list * d_list
     seterr(**olderr)
 
+    print("kz_list")
     print(kz_list)
+    print("delta")
     print(delta)
 
     # For a very opaque layer, reset delta to avoid divide-by-0 and similar
