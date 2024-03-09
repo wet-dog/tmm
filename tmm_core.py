@@ -61,6 +61,9 @@ def is_forward_angle(n, theta):
         "n: " + str(n) + "   angle: " + str(theta)
     )
     ncostheta = n * cos(theta)
+
+    print(ncostheta)
+
     if abs(ncostheta.imag) > 100 * EPSILON:
         # Either evanescent decay or lossy medium. Either way, the one that
         # decays is the forward-moving wave
