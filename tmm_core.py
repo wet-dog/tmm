@@ -286,6 +286,7 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
     delta = kz_list * d_list
     seterr(**olderr)
 
+    print(kz_list)
     print(delta)
 
     # For a very opaque layer, reset delta to avoid divide-by-0 and similar
