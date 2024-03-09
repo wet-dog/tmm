@@ -113,7 +113,10 @@ def list_snell(n_list, th_0):
     """
     # Important that the arcsin here is numpy.lib.scimath.arcsin, not
     # numpy.arcsin! (They give different results e.g. for arcsin(2).)
-    angles = arcsin(n_list[0] * np.sin(th_0) / n_list)
+    n0_ = n_list[0] * np.sin(th_0) / n_list
+    print("n0_")
+    print(n0_)
+    angles = arcsin(n0_)
     # The first and last entry need to be the forward angle (the intermediate
     # layers don't matter, see https://arxiv.org/abs/1603.02720 Section 5)
     if not is_forward_angle(n_list[0], angles[0]):
