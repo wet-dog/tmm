@@ -375,13 +375,24 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
             ),
             make_2x2_array(1, r_list[i, i + 1], r_list[i, i + 1], 1, dtype=complex),
         )
+
+    print("M_list")
+    print(M_list)
+
     Mtilde = make_2x2_array(1, 0, 0, 1, dtype=complex)
     for i in range(1, num_layers - 1):
         Mtilde = np.dot(Mtilde, M_list[i])
+
+    print("Mtilde after loop")
+    print(Mtilde)
+
     Mtilde = np.dot(
         make_2x2_array(1, r_list[0, 1], r_list[0, 1], 1, dtype=complex) / t_list[0, 1],
         Mtilde,
     )
+
+    print("Mtilde after dot")
+    print(Mtilde)
 
     # Net complex transmission and reflection amplitudes
     r = Mtilde[1, 0] / Mtilde[0, 0]
