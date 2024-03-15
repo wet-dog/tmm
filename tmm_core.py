@@ -383,26 +383,26 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
 
     # vw_list[n] = [v_n, w_n]. v_0 and w_0 are undefined because the 0th medium
     # has no left interface.
-    vw_list = zeros((num_layers, 2), dtype=complex)
-    vw = array([[t], [0]])
-    vw_list[-1, :] = np.transpose(vw)
-    for i in range(num_layers - 2, 0, -1):
-        vw = np.dot(M_list[i], vw)
-        vw_list[i, :] = np.transpose(vw)
+    # vw_list = zeros((num_layers, 2), dtype=complex)
+    # vw = array([[t], [0]])
+    # vw_list[-1, :] = np.transpose(vw)
+    # for i in range(num_layers - 2, 0, -1):
+    #     vw = np.dot(M_list[i], vw)
+    #     vw_list[i, :] = np.transpose(vw)
 
     # Net transmitted and reflected power, as a proportion of the incoming light
     # power.
     R = R_from_r(r)
     T = T_from_t(pol, t, n_list[0], n_list[-1], th_0, th_list[-1])
-    power_entering = power_entering_from_r(pol, r, n_list[0], th_0)
+    # power_entering = power_entering_from_r(pol, r, n_list[0], th_0)
 
     return {
         "r": r,
         "t": t,
         "R": R,
         "T": T,
-        "power_entering": power_entering,
-        "vw_list": vw_list,
+        # "power_entering": power_entering,
+        # "vw_list": vw_list,
         "kz_list": kz_list,
         "th_list": th_list,
         "pol": pol,
