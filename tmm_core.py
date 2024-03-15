@@ -381,6 +381,8 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
 
     Mtilde = make_2x2_array(1, 0, 0, 1, dtype=complex)
     for i in range(1, num_layers - 1):
+        print(f"M_list[{i}]")
+        print(M_list[i])
         Mtilde = np.dot(Mtilde, M_list[i])
 
     print("Mtilde after loop")
