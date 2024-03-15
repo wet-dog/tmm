@@ -355,6 +355,12 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
         r_list[i, i + 1] = interface_r(
             pol, n_list[i], n_list[i + 1], th_list[i], th_list[i + 1]
         )
+
+    print("t_list")
+    print(t_list)
+    print("r_list")
+    print(r_list)
+
     # At the interface between the (n-1)st and nth material, let v_n be the
     # amplitude of the wave on the nth side heading forwards (away from the
     # boundary), and let w_n be the amplitude on the nth side heading backwards
