@@ -373,12 +373,20 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
         print(f"c {i} {c}")
         print(f"delta[{i}] {delta[i]}")
         print(f"r_list[{i}, {i} + 1] {r_list[i, i + 1]}")
-        M_list[i] = np.dot(make_2x2_array(c, 0, 0, c), np.dot(
-            make_2x2_array(
+
+        a0 = make_2x2_array(c, 0, 0, c)
+        b0 = make_2x2_array(
                 exp(-1j * delta[i]), 0, 0, exp(1j * delta[i]), dtype=complex
-            ),
-            make_2x2_array(1, r_list[i, i + 1], r_list[i, i + 1], 1, dtype=complex),
-        ))
+            )
+        c0 = make_2x2_array(1, r_list[i, i + 1], r_list[i, i + 1], 1, dtype=complex)
+
+        print(f"{i} {a0}")
+        print(f"{i} {b0}")
+        print(f"{i} {c0}")
+
+        print(f"{i} {np.dot(b0, c0)}")
+
+        M_list[i] = np.dot(a0, np.dot(b0, c0))
 
     print("M_list")
     print(M_list)
