@@ -380,11 +380,11 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
             )
         c0 = make_2x2_array(1, r_list[i, i + 1], r_list[i, i + 1], 1, dtype=complex)
 
-        print(f"{i} {a0}")
-        print(f"{i} {b0}")
-        print(f"{i} {c0}")
+        print(f"a0 {i} {a0}\n")
+        print(f"b0 {i} {b0}\n")
+        print(f"c0 {i} {c0}\n")
 
-        print(f"{i} {np.dot(b0, c0)}")
+        print(f"np.dot(b0, c0) {i} {np.dot(b0, c0)}\n")
 
         M_list[i] = np.dot(a0, np.dot(b0, c0))
 
