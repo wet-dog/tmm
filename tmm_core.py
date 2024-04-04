@@ -371,6 +371,8 @@ def coh_tmm(pol, n_list, d_list, th_0, lam_vac):
     for i in range(1, num_layers - 1):
         c = (1 / t_list[i, i + 1])
         print(f"{i} {c}")
+        print(f"{i} {delta[i]}")
+        print(f"{i} {r_list[i, i + 1]}")
         M_list[i] = c * np.dot(
             make_2x2_array(
                 exp(-1j * delta[i]), 0, 0, exp(1j * delta[i]), dtype=complex
